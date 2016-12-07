@@ -1,9 +1,9 @@
 Catenamedia
 ===========
 
-A Symfony project created on December 7, 2016, 1:58 pm.
+A Symfony3 project created on December 7, 2016, 1:58 pm.
 
-I have created a bundle: CatenaMediaBundle for this test (src/CatenaMediaBundle)
+I have created a Symfony bundle: CatenaMediaBundle for this test (src/CatenaMediaBundle)
 
 Code was organised in such a way that it can be extended to multiple types of feeds from multiple providers.
 
