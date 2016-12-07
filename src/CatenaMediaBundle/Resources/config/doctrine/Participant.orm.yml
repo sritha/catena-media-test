@@ -1,0 +1,61 @@
+CatenaMediaBundle\Entity\Participant:
+    type: entity
+    table: participant
+    indexes:
+        fkMarketId:
+            columns:
+                - marketId
+    id:
+        id:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        odds:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: false
+        oddsdecimal:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 2
+            column: oddsDecimal
+        lastupdatedate:
+            type: date
+            nullable: true
+            column: lastUpdateDate
+        lastupdatetime:
+            type: time
+            nullable: true
+            column: lastUpdateTime
+        handicap:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+    manyToOne:
+        marketid:
+            targetEntity: SportMarket
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                marketId:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

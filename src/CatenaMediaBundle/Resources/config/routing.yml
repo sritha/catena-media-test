@@ -1,0 +1,3 @@
+catena_media_homepage:
+    path:     /
+    defaults: { _controller: CatenaMediaBundle:Default:index }

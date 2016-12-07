@@ -1,0 +1,49 @@
+CatenaMediaBundle\Entity\SportType:
+    type: entity
+    table: sport_type
+    indexes:
+        classId:
+            columns:
+                - classId
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        url:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        lastupdatedate:
+            type: date
+            nullable: true
+            column: lastUpdateDate
+        lastupdatetime:
+            type: time
+            nullable: true
+            column: lastUpdateTime
+    manyToOne:
+        classid:
+            targetEntity: SportClass
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                classId:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

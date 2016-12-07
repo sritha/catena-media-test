@@ -1,0 +1,111 @@
+CatenaMediaBundle\Entity\SportMarket:
+    type: entity
+    table: sport_market
+    indexes:
+        fkSportTypeId:
+            columns:
+                - typeId
+    id:
+        id:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        url:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        eventdate:
+            type: date
+            nullable: true
+            column: eventDate
+        eventtime:
+            type: time
+            nullable: true
+            column: eventTime
+        bettilldate:
+            type: date
+            nullable: true
+            column: betTillDate
+        bettilltime:
+            type: time
+            nullable: true
+            column: betTillTime
+        lastupdatedate:
+            type: date
+            nullable: true
+            column: lastUpdateDate
+        lastupdatetime:
+            type: time
+            nullable: true
+            column: lastUpdateTime
+        placeavailable:
+            type: boolean
+            nullable: true
+            options:
+                default: '0'
+            column: placeAvailable
+        forcastavailable:
+            type: boolean
+            nullable: true
+            options:
+                default: '0'
+            column: forcastAvailable
+        tricastavailable:
+            type: boolean
+            nullable: true
+            options:
+                default: '0'
+            column: tricastAvailable
+        eachwayavailable:
+            type: boolean
+            nullable: true
+            options:
+                default: '0'
+            column: eachwayAvailable
+        cashoutavailable:
+            type: boolean
+            nullable: true
+            options:
+                default: '0'
+            column: cashoutAvailable
+        startingpriceavailable:
+            type: boolean
+            nullable: true
+            column: startingPriceAvailable
+        livepriceavailable:
+            type: boolean
+            nullable: true
+            column: livePriceAvailable
+        guarenteedpriceavailable:
+            type: boolean
+            nullable: true
+            column: guarenteedPriceAvailable
+        firstpriceavailable:
+            type: boolean
+            nullable: true
+            column: firstPriceAvailable
+    manyToOne:
+        typeid:
+            targetEntity: SportType
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                typeId:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

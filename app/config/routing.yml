@@ -1,0 +1,12 @@
+catena_media:
+    resource: "@CatenaMediaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+feed:
+    resource: "@feedBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
